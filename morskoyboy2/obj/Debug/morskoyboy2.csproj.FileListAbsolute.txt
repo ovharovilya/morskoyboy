@@ -19,3 +19,14 @@ G:\C#\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.csproj.GenerateResource.cach
 G:\C#\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.csproj.CoreCompileInputs.cache
 G:\C#\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.exe
 G:\C#\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.pdb
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\bin\Debug\morskoyboy2.exe.config
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\bin\Debug\morskoyboy2.exe
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\bin\Debug\morskoyboy2.pdb
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.csproj.AssemblyReference.cache
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.exe.config
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.Form1.resources
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.Properties.Resources.resources
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.csproj.GenerateResource.cache
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.csproj.CoreCompileInputs.cache
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.exe
+C:\Users\test\Desktop\morskoyboy2\morskoyboy2\obj\Debug\morskoyboy2.pdb

@@ -18,6 +18,8 @@ namespace morskoyboy2
         private int[,] playerBoard = new int[10, 10];
         private int[,] enemyBoard = new int[10, 10];
 
+        // 1 - 4, 2 - 3, 3 - 2, 4 - 1
+
         public Form1()
         {
             InitializeComponent();
@@ -99,34 +101,107 @@ namespace morskoyboy2
 
         private void PlaceShips()
         {
+            //Random random = new Random();
+            //int shipsToPlace = 10;
+            //int placed = 0;
+
+            //while(placed < shipsToPlace)
+            //{
+            //    int row = random.Next(0, 10);
+            //    int col = random.Next(0, 10);
+            //    if (enemyBoard[row, col] == 0)
+            //    {
+            //        enemyBoard[row, col] = 1;
+            //        placed++;
+            //    }
+            //}
+
+            //placed = 0;
+
+            //while (placed < shipsToPlace)
+            //{
+            //    int row = random.Next(0, 10);
+            //    int col = random.Next(0, 10);
+            //    if (playerBoard[row, col] == 0)
+            //    {
+            //        playerBoard[row, col] = 1;
+            //        placed++;
+            //    }
+            //}
+            PlaceShipForBoard(enemyBoard);
+            PlaceShipForBoard(playerBoard);
+
+        }
+
+        private void PlaceShipForBoard(int[,] board)
+        {
             Random random = new Random();
-            int shipsToPlace = 10;
-            int placed = 0;
-
-            while(placed < shipsToPlace)
+            int[] ships = { 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
+            
+            foreach(int shipSize in ships)
             {
-                int row = random.Next(0, 10);
-                int col = random.Next(0, 10);
-                if (enemyBoard[row, col] == 0)
-                {
-                    enemyBoard[row, col] = 1;
-                    placed++;
-                }
-            }
+                bool placed = false;
 
-            placed = 0;
-
-            while (placed < shipsToPlace)
-            {
-                int row = random.Next(0, 10);
-                int col = random.Next(0, 10);
-                if (playerBoard[row, col] == 0)
+                while(!placed)
                 {
-                    playerBoard[row, col] = 1;
-                    placed++;
+                    int row = random.Next(0, 10);
+                    int col = random.Next(0, 10);
+
+                    bool horizontal = random.Next(2) == 0;
+
+                    if (CanPlaceShip(board, row, col, shipSize, horizontal))
+                    {
+                        for (int i = 0; i < shipSize; i++)
+                        {
+                            if (horizontal)
+                            {
+                                board[row, col + i] = 1;
+                            }
+                            else
+                            {
+                                board[row + i, col] = 1;
+                            }
+                          
+                            placed = true;
+                        }
+                    }
                 }
             }
         }
+
+        private bool CanPlaceShip(int[,] board, int row, int col, int size, bool horizontal)
+        {
+            if (horizontal)
+            {
+                if (col + size > 10)
+                    return false;
+
+                for (int i = 0; i < size; i++)
+                {
+                    if (board[row, col + i] != 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                if (row + size > 10)
+                {
+                    return false;
+                }
+
+                for (int i = 0; i < size; i++)
+                {
+                    if (board[row + i, col] != 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
 
         private void DrawPlayerShips()
         {
@@ -174,7 +249,11 @@ namespace morskoyboy2
                 clickedButton.Text = "*";
                 labelStatus.Text = "Промах";
             }
-            EnemyTurn();
+
+            if (!CheckWin(enemyBoard))
+            {
+                EnemyTurn();
+            }
         }
 
         private bool CheckWin(int[,] board)
@@ -228,7 +307,6 @@ namespace morskoyboy2
                 playerButtons[row, col].Text = "*";
                 labelStatus.Text = "Промах (бот)";
             }
-
         }
     }
 }
