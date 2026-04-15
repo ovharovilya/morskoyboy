@@ -31,6 +31,7 @@
             this.panelPlayer = new System.Windows.Forms.Panel();
             this.panelEnemy = new System.Windows.Forms.Panel();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.buttonRestart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelPlayer
@@ -56,11 +57,23 @@
             this.labelStatus.TabIndex = 0;
             this.labelStatus.Text = "Ход: Игрока";
             // 
+            // buttonRestart
+            // 
+            this.buttonRestart.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.buttonRestart.Location = new System.Drawing.Point(361, 337);
+            this.buttonRestart.Name = "buttonRestart";
+            this.buttonRestart.Size = new System.Drawing.Size(75, 23);
+            this.buttonRestart.TabIndex = 2;
+            this.buttonRestart.Text = "Рестарт";
+            this.buttonRestart.UseVisualStyleBackColor = true;
+            this.buttonRestart.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 372);
+            this.Controls.Add(this.buttonRestart);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.panelEnemy);
             this.Controls.Add(this.panelPlayer);
@@ -77,6 +90,7 @@
         private System.Windows.Forms.Panel panelPlayer;
         private System.Windows.Forms.Panel panelEnemy;
         private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.Button buttonRestart;
     }
 }
 
